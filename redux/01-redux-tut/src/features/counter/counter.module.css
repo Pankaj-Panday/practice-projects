@@ -1,0 +1,84 @@
+.row {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.row:not(:last-child) {
+	margin-bottom: 16px;
+}
+
+.value {
+	font-size: 48px;
+	padding-left: 16px;
+	padding-right: 16px;
+	margin-top: 2px;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.button {
+	appearance: none;
+	margin: 20px;
+	background: none;
+	font-size: 20px;
+	padding: 12px;
+	outline: none;
+	border: 2px solid transparent;
+	color: rgb(112, 76, 182);
+	cursor: pointer;
+	background-color: rgba(112, 76, 182, 0.1);
+	border-radius: 10px;
+	transition: all 0.15s;
+}
+
+.button:hover,
+.button:focus {
+	border: 2px solid rgba(112, 76, 182, 0.4);
+}
+
+.button:active {
+	background-color: rgba(112, 76, 182, 0.2);
+}
+
+.textbox {
+	font-size: 20px;
+	padding: 12px 5px;
+	width: 40px;
+	text-align: center;
+	margin-right: 8px;
+	border: none;
+	outline: 2px solid rgba(98, 98, 98, 0.588);
+	border-radius: 10px;
+	transition: outline 200ms ease;
+}
+
+.textbox:active,
+.textbox:focus-visible,
+.textbox:hover {
+	outline: 2px solid rgb(150, 150, 150);
+}
+
+.asyncButton {
+	composes: button;
+	position: relative;
+	margin-left: 8px;
+}
+
+.asyncButton::after {
+	content: "";
+	background-color: rgba(112, 76, 182, 0.15);
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	transition: width 1s linear, opacity 0.5s ease 1s;
+}
+
+.asyncButton:active:after {
+	width: 0%;
+	opacity: 1;
+	transition: 0s;
+}
