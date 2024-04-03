@@ -133,10 +133,19 @@ section h1 {
 
 p.post-content {
   margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.post-author {
+  color: rgb(102, 102, 102);
+}
+
+.timeago {
+  color: rgb(162, 162, 162);
 }
 
 .button {
-  display: inline-block;
+  display: block;
   background: #1976d2;
   color: white;
   border-radius: 4px;
