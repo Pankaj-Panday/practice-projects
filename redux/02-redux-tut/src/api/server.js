@@ -8,7 +8,7 @@ import { Server as MockSocketServer } from 'mock-socket'
 import { parseISO } from 'date-fns'
 
 const NUM_USERS = 3
-const POSTS_PER_USER = 3
+const POSTS_PER_USER = 1
 const RECENT_NOTIFICATIONS_DAYS = 7
 
 // Add an extra delay to all endpoints, so loading spinners show up.

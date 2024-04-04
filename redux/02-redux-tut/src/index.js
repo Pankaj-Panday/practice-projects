@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 
 import App from './App.js'
 import { store } from './app/store.js'
-
+import { fetchUsers } from './features/users/usersSlice.js'
 import './index.css'
 
 import { worker } from './api/server.js'
@@ -14,6 +14,8 @@ async function start() {
   // Start our mock API server
   await worker.start({ onUnhandledRequest: 'bypass' })
 
+  store.dispatch(fetchUsers())
+
   const root = createRoot(document.getElementById('root'))
 
   root.render(
@@ -21,6 +23,7 @@ async function start() {
       <Provider store={store}>
         <App />
       </Provider>
+      ,
     </React.StrictMode>,
   )
 }
