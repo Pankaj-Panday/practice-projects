@@ -1,37 +1,45 @@
-import { useState } from "react";
-
+import Searchbar from "./components/Searchbar";
+import SearchResult from "./components/SearchResult/SearchResult";
+import NoItemFound from "./components/NoItemFound";
+import SearchError from "./components/SearchError";
 import "./App.css";
-import SearchBox from "./components/searchBox/SearchBox";
-import ListBox from "./components/listBox/ListBox";
 
 function App() {
-	const transformData = (data) => data.results.slice(0, 5);
-	const transformItem = (item) => item.name;
-	const dataPromise = async (query, signal) =>
-		await fetch(`https://swapi.dev/api/people/?search=${query}`, { signal });
+	const itemsToShow = 5;
+	const transformApiData = (data) => {
+		return data.results.slice(0, itemsToShow);
+	};
+
+	const transformItem = (item) => {
+		return item.name;
+	};
+
+	const apiReq = async (query, signal) =>
+		await fetch(`https://swapi.dev/api/people/?search=${query}`, {
+			signal: signal,
+		});
 
 	return (
 		<div className="app">
 			<div className="wrapper">
-				<SearchBox
-					name="personName"
-					label="Enter Person Name"
-					id="personName"
-					placeholder="Enter star war character"
+				<Searchbar
+					name="charName"
+					id="charName"
+					placeholder="Enter name"
 					autoComplete={true}
-					styles={{
-						label: "search-label",
+					className={{
+						label: "",
 						input: "search-input",
 					}}
 					debounceWait={400}
-					listBox={(items, activeIndex) => (
-						<ListBox items={items} activeIndex={activeIndex} />
+					searchResult={(items, selectedIndex) => (
+						<SearchResult items={items} selectedIndex={selectedIndex} />
 					)}
-					noItemsMessage={() => <div>No items found</div>}
-					errorMessage={() => <div>Something went wrong</div>}
-					transformData={transformData}
+					noItemsFound={() => <NoItemFound />}
+					searchError={() => <SearchError />}
+					transformApiData={transformApiData}
 					transformItem={transformItem}
-					promise={dataPromise}
+					apiReq={apiReq}
 				/>
 			</div>
 		</div>

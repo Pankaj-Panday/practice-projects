@@ -1,0 +1,16 @@
+.list {
+	margin-top: 8px;
+	border-radius: 8px;
+	width: 100%;
+	background-color: var(--clr-input-bg);
+	overflow: hidden;
+}
+
+.list-item {
+	padding: 10px;
+	list-style: none;
+}
+
+.active-list-item {
+	background-color: var(--clr-active-item-bg);
+}
