@@ -65,7 +65,6 @@ export const postsSlice = createSlice({
       .addCase(addNewPost.fulfilled, postsAdapter.addOne)
   },
 })
-;('posts/fetchPosts')
 
 export const { postAdded, postUpdated, reactionAdded } = postsSlice.actions
 export default postsSlice.reducer

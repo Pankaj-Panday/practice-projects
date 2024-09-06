@@ -1,0 +1,47 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+	padding: 2rem 0;
+}
+
+main {
+	border: 1px solid black;
+	width: clamp(270px, 80%, 1400px);
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+h1 {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+h2 {
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+h3 {
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+button {
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+}
+
+li {
+	list-style: none;
+}

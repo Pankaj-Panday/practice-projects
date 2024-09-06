@@ -24,6 +24,7 @@ const AddPostForm = () => {
     if (canSave) {
       try {
         setAddRequestStatus('pending')
+        console.dir(addNewPost)
         await dispatch(addNewPost({ title, content, user: userId })).unwrap()
         setTitle('')
         setContent('')

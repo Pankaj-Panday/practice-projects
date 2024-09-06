@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 export const counterSlice = createSlice({
-	name: "counter",
+	name: "posts",
 	initialState: {
 		value: 0,
 	},
