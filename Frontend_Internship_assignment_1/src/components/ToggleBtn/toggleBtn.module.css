@@ -1,0 +1,35 @@
+.switch {
+	position: relative;
+	display: inline-block;
+	background-color: rgba(220, 220, 220, 0.6);
+	height: 12px;
+	width: 36px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.switch::after {
+	content: "";
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	background-color: #f0f0f0;
+	left: 0;
+	top: 50%;
+	translate: 0 -50%;
+	border-radius: 50%;
+	transition: translate 150ms ease-out;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+input[type="checkbox"]:checked + .switch::after {
+	translate: 16px -50%;
+	background-color: #fff;
+}
+
+input[type="checkbox"]:checked + .switch {
+	background-color: rgba(220, 220, 220, 1);
+}

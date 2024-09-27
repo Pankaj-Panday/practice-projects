@@ -1,0 +1,36 @@
+:root {
+	--clr-root: #b5d8ff;
+	--clr-container: #5c9ce5;
+	--clr-content-container: #e4f1ff;
+	--br-container: 2.5rem;
+	--clr-text-light: #3d4044;
+	--clr-text-dark: #303235;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font-family: "Nunito", sans-serif;
+	background-color: var(--clr-root);
+}
+
+#root {
+	background-color: var(--clr-root);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* overflow-y: auto; */
+	padding: 2% 8%;
+}
