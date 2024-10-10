@@ -11,9 +11,23 @@
 </head>
 
 <body>
-  <div class="parent">
-    <img src="https://i.pinimg.com/736x/2a/2e/93/2a2e934f5d375536db40e5da86e29e94.jpg">
-  </div>
+  <form enctype="multipart/form-data">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name">
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email">
+    </div>
+    <div>
+      <label for="avatar">Avatar</label>
+      <input type="file" id="avatar" name="avatar" multiple>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+
   <script src=" ./main.js" defer>
   </script>
 </body>
